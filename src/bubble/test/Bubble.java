@@ -1,6 +1,5 @@
 package bubble.test;
 
-import com.sun.jdi.event.ThreadStartEvent;
 import lombok.Data;
 
 import javax.swing.*;

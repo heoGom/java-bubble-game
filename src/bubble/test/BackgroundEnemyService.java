@@ -5,13 +5,11 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 public class BackgroundEnemyService implements Runnable {
 
     private BufferedImage image;
     private Enemy enemy;
-
 
     public BackgroundEnemyService(Enemy enemy) {
         this.enemy = enemy;
@@ -26,11 +24,9 @@ public class BackgroundEnemyService implements Runnable {
     public void run() {
         while (enemy.getState()==0) {
 
-
             Color leftColor = new Color(image.getRGB(enemy.getX() - 10, enemy.getY() + 25));
             Color rightColor = new Color(image.getRGB(enemy.getX() + 50 + 15, enemy.getY() + 25));
             int bottomColor = image.getRGB(enemy.getX() + 10, enemy.getY() + 50 + 5) + image.getRGB(enemy.getX() + 50 - 10, enemy.getY() + 50 + 5);
-
 
             //바닥 충돌 확인
             if (bottomColor != -2) {
